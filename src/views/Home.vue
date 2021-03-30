@@ -1,18 +1,72 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home container">
+    <div class="row">
+      <div class="col-md-3 pt-5">
+        <SideNav />
+      </div>
+      <div class="col-md-9 pt-5">
+
+       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-5">
+          <Product v-for="product in products" :product="product" :key="product.id" />
+          
+       </div>
+        
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import SideNav from "../components/SideNav.vue";
+import Product from "../components/Product.vue";
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    SideNav,
+    Product
+  },
+  data(){
+    return {
+      products : [
+        {
+          id : 1,
+          name : "Chelsea Shoes",
+          price : 200,
+          shortdesc : "Best Drip in the Market"
+        },
+        {
+          id : 2,
+          name : "Kimono",
+          price : 50,
+          shortdesc : "Classy, Stylish, Dope"
+        },
+        {
+          id : 3,
+          name : "Rolex",
+          price : 2500,
+          shortdesc : "Elegance built in"
+        },
+        {
+          id : 4,
+          name : "Baelerry Wallet",
+          price : 80,
+          shortdesc : "Sleek, Trendy, Clean"
+        },
+        {
+          id : 5,
+          name : "Lady Handbags",
+          price : 230,
+          shortdesc : "Fabulous, Exotic, Classy"
+        },
+        {
+          id : 6,
+          name : "Casual Shirts",
+          price : 30,
+          shortdesc : "Neat, Sleek, Smart"
+        }
+      ]
+    }
   }
 }
 </script>
