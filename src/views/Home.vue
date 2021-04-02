@@ -2,7 +2,8 @@
   <div class="home container">
     <div class="row">
       <div class="col-md-3 pt-5">
-        <SideNav />
+        <!-- <SideNav /> -->
+        <Cart />
       </div>
       <div class="col-md-9 pt-5">
 
@@ -17,14 +18,16 @@
 </template>
 
 <script>
-import SideNav from "../components/SideNav.vue";
+// import SideNav from "../components/SideNav.vue";
 import Product from "../components/Product.vue";
+import Cart from "../components/Cart.vue";
 
 export default {
   name: 'Home',
   components: {
-    SideNav,
-    Product
+    //SideNav,
+    Product,
+    Cart
   },
   data(){
     return {

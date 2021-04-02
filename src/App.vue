@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/#">Welcome to Verify</a>
+        <a class="navbar-brand" href="/#">The Identity Store</a>
 
         
         <button
