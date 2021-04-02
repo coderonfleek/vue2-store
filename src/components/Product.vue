@@ -11,15 +11,43 @@
                 {{product.shortdesc}}
                 </small>
             </p>
-            <a href="#" class="btn btn-primary">Add to Cart</a>
+            <button @click="addToCart()" class="btn btn-primary btn-block" :disabled="itemAlreadyInCart">{{itemAlreadyInCart? "Added" : "Add to Cart"}}</button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
     name : "Product",
-    props : ['product']
+    props : ['product'],
+    computed : {
+        ...mapState({
+            cart : state => state.cart
+        }),
+        itemAlreadyInCart(){
+            let inCart = false;
+
+            this.cart.forEach(item => {
+                if(item.id == this.product.id){
+                    inCart = true;
+                }
+            });
+
+            return inCart;
+        }
+    },
+    methods : {
+        addToCart(){
+            
+            if(!this.itemAlreadyInCart){
+                this.$store.commit("addCartItem", this.product);
+            }else{
+                alert("Item already added to Cart");
+            }
+        }
+    }
 }
 </script>
