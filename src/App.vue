@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/#">The Identity Store</a>
+        <router-link to="/" class="navbar-brand">The Identity Store</router-link>
 
         
         <button
